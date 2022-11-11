@@ -1,0 +1,20 @@
+        if(pg instanceof PrenotazioneGruppo) {
+        }
+
+        if(pg instanceof PrenotazioneSingola) {
+            if (pg.getPr() == preferenza.INTERNA) {
+                if (interni - pg.getN() >= 0) {
+                    listaPrenotazioni.add(pg);
+                    interni = interni - pg.getN();
+                } else {
+                    System.out.println(pg.getCod() + " posti esauriti");
+                }
+            } else {
+                if (esterni - pg.getN() >= 0) {
+                    listaPrenotazioni.add(pg);
+                    esterni = esterni - pg.getN();
+                } else {
+                    System.out.println(pg.getCod() + " posti esauriti");
+                }
+            }
+        }
